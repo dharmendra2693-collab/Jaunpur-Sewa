@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Seller Join</title></head>
+<body style="font-family:system-ui;background:#f6f6f6;padding:15px">
+<div style="background:#fff;padding:20px;border-radius:18px;max-width:400px;margin:auto">
+<h2>JAUNPUR SEVA</h2><p>Verified Seller - ₹299/year</p>
+<input id="name" placeholder="आपका नाम - राजू इलेक्ट्रीशियन" style="width:100%;padding:14px;border-radius:12px;border:1px solid #ddd;margin-top:10px">
+<input id="work" placeholder="काम - इलेक्ट्रीशियन, JCB" style="width:100%;padding:14px;border-radius:12px;border:1px solid #ddd;margin-top:10px">
+<input id="ward" placeholder="Ward - Ward 15, Olandganj" style="width:100%;padding:14px;border-radius:12px;border:1px solid #ddd;margin-top:10px">
+<div style="background:#f0f0f0;padding:12px;border-radius:12px;margin-top:14px;text-align:center"><b>UPI: 8218619431@upi - ₹299</b></div>
+<a id="waBtn" onclick="addSeller()" href="#" style="display:block;background:#25D366;color:#fff;padding:16px;text-align:center;border-radius:14px;text-decoration:none;font-weight:800;margin-top:16px">✅ Add करो + WhatsApp भेजो</a>
+<a href="index.html" style="display:block;text-align:center;margin-top:12px;color:#888;text-decoration:none">← वापस देखें</a>
+</div>
+<script>
+function addSeller(){
+let n=document.getElementById('name').value, w=document.getElementById('work').value, ward=document.getElementById('ward').value;
+if(!n||!w){alert('नाम और काम लिखो');return}
+let sellers=JSON.parse(localStorage.getItem('jp_sellers')||'[]');
+sellers.push({name:n,work:w,ward:ward});
+localStorage.setItem('jp_sellers',JSON.stringify(sellers));
+let msg=`*Jaunpur Seva Seller*%0AName:${n}%0AWork:${w}%0AWard:${ward}%0APayment Done`;
+window.location.href=`https://wa.me/918218619431?text=${msg}`;
+}
+</script>
+</body>
+</html>
