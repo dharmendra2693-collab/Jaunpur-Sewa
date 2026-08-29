@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jaunpur Seva - Official</title>
+<style>body{margin:0;font-family:system-ui;background:#f5f5f7}.top{background:#000;color:#fff;padding:22px 16px}.card{background:#fff;border-radius:18px;padding:14px;margin:12px;border:1px solid #eee}</style>
+</head>
+<body>
+<div class="top">
+<h1 style="margin:0">JAUNPUR SEVA</h1>
+<p style="color:#aaa;margin:4px 0 12px">Powered by UNDC | Ward 1-25 | Helpline: 8218619431</p>
+<input id="q" onkeyup="search()" placeholder="खोजें - इलेक्ट्रीशियन, JCB..." style="width:100%;padding:13px;border-radius:12px;border:0">
+</div>
+<div style="padding:12px;display:flex;gap:8px;overflow:auto">
+<a href="jaunpur-seller.html" style="background:#000;color:#fff;padding:12px 18px;border-radius:22px;text-decoration:none;white-space:nowrap">+ Seller जोड़ें ₹299</a>
+<a href="https://wa.me/918218619431?text=Kuda Shikayat" style="background:#fff;border:1px solid #ddd;padding:12px 16px;border-radius:22px;text-decoration:none;color:#000">🗑️ कूड़ा शिकायत</a>
+</div>
+<div id="list">
+<div class="card"><b>राजू इलेक्ट्रीशियन ⚡ Verified</b><br><small>Olandganj | 50+ काम</small><div style="display:flex;gap:8px;margin-top:10px"><a href="tel:+918218619431" style="flex:1;background:#e8f5e9;padding:11px;text-align:center;border-radius:12px;text-decoration:none;color:#000">📞 Call</a><a href="https://wa.me/918218619431" style="flex:1;background:#000;color:#fff;padding:11px;text-align:center;border-radius:12px;text-decoration:none">WhatsApp</a></div></div>
+</div>
+<script>
+let sellers=JSON.parse(localStorage.getItem('jp_sellers')||'[]');
+function render(){let l=document.getElementById('list'); sellers.forEach(s=>{l.innerHTML+=`<div class="card"><b>${s.name} ✅ Verified</b><br><small>${s.work} | ${s.ward}</small><div style="display:flex;gap:8px;margin-top:10px"><a href="tel:+918218619431" style="flex:1;background:#e8f5e9;padding:11px;text-align:center;border-radius:12px;text-decoration:none;color:#000">📞 Call</a><a href="https://wa.me/918218619431?text=${encodeURIComponent(s.name+' chahiye')}" style="flex:1;background:#000;color:#fff;padding:11px;text-align:center;border-radius:12px;text-decoration:none">WhatsApp</a></div></div>`});}
+function search(){let v=document.getElementById('q').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(v)?'block':'none')}
+render();
+</script>
+</body>
+</html>
