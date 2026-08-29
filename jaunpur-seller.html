@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seller Join - Jaunpur Seva</title>
+<style>body{margin:0;font-family:system-ui;background:#f6f6f6;padding:16px} .box{background:#fff;padding:20px;border-radius:18px;border:1px solid #eee}</style>
+</head>
+<body>
+<div class="box">
+<h2 style="margin:0">JAUNPUR SEVA</h2>
+<p style="color:#666">Verified Seller Registration - ₹299/year</p>
+
+<input id="name" placeholder="आपका नाम - जैसे राजू इलेक्ट्रीशियन" style="width:100%;padding:14px;border-radius:12px;border:1px solid #ddd;margin-top:12px">
+<input id="work" placeholder="काम - जैसे इलेक्ट्रीशियन, JCB" style="width:100%;padding:14px;border-radius:12px;border:1px solid #ddd;margin-top:10px">
+<input id="ward" placeholder="Ward No - जैसे Ward 15, Olandganj" style="width:100%;padding:14px;border-radius:12px;border:1px solid #ddd;margin-top:10px">
+
+<div style="background:#f0f0f0;padding:12px;border-radius:12px;margin-top:14px;text-align:center">
+<b>UPI Payment: ₹299</b><br>
+<span style="font-size:14px">8218619431@upi</span><br>
+<small>Payment के बाद Screenshot भेजें</small>
+</div>
+
+<a id="waBtn" href="#" style="display:block;background:#25D366;color:#fff;padding:16px;text-align:center;border-radius:14px;text-decoration:none;font-weight:800;margin-top:16px;font-size:18px">✅ WhatsApp पर भेजें - 8218619431</a>
+
+<a href="tel:8218619431" style="display:block;background:#000;color:#fff;padding:14px;text-align:center;border-radius:14px;text-decoration:none;margin-top:10px">📞 Call - 8218619431</a>
+
+<a href="index.html" style="display:block;text-align:center;margin-top:12px;color:#888;text-decoration:none">← वापस Jaunpur Seva देखें</a>
+</div>
+
+<script>
+function updateWA(){
+let n=document.getElementById('name').value||'नाम';
+let w=document.getElementById('work').value||'काम';
+let ward=document.getElementById('ward').value||'Ward';
+let msg=`*Jaunpur Seva - Seller Join Request*%0A%0AName: ${n}%0AWork: ${w}%0AWard: ${ward}%0A%0APayment: ₹299 Done%0AScreenshot bhej raha hu`;
+document.getElementById('waBtn').href=`https://wa.me/918218619431?text=${msg}`;
+}
+document.querySelectorAll('input').forEach(i=>i.addEventListener('input',updateWA));
+updateWA();
+</script>
+</body>
+</html>
